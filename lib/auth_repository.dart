@@ -1,3 +1,5 @@
+import 'app_user.dart';
+
 abstract class AuthRepository {
   // emits a new value every time the authentication state changes
   Stream<AppUser?> authStateChanges();
