@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_architecture/signin_screen.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'features/activity/presentation/consumer.dart';
+
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SignInScreen(),
+      home: const Home(),
     );
   }
 }
