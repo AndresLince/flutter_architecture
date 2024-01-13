@@ -3,6 +3,7 @@ import 'package:flutter_architecture/signin_screen.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'features/activity/presentation/consumer.dart';
+import 'features/video/presentation/video_list.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Home(),
+      home: const VideoList(),
     );
   }
 }
