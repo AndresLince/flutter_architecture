@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'activity.freezed.dart';
+part 'activity.g.dart';
 
 /// The response of the `GET /api/activity` endpoint.
 ///
