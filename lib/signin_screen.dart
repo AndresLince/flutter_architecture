@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_architecture/async_value_ui.dart';
 import 'package:flutter_architecture/signin_screen_controller.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,13 +11,7 @@ class SignInScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<AsyncValue>(
       signInScreenControllerProvider,
-          (_, state) {
-        if (!state.isLoading && state.hasError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.error.toString())),
-          );
-        }
-      },
+          (_, state) => state.showSnackbarOnError(context),
     );
     // watch and rebuild when the state changes
     final AsyncValue<void> state = ref.watch(signInScreenControllerProvider);
