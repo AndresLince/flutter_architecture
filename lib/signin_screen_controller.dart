@@ -1,8 +1,10 @@
 import 'dart:async';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-class SignInScreenController extends AsyncNotifier<void> {
+part 'signin_screen_controller.g.dart';
+
+@riverpod
+class SignInScreenController extends _$SignInScreenController {
   @override
   FutureOr<void> build() {
     // no-op
