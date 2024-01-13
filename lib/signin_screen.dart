@@ -8,6 +8,16 @@ class SignInScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen<AsyncValue>(
+      signInScreenControllerProvider,
+          (_, state) {
+        if (!state.isLoading && state.hasError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(state.error.toString())),
+          );
+        }
+      },
+    );
     // watch and rebuild when the state changes
     final AsyncValue<void> state = ref.watch(signInScreenControllerProvider);
     return Scaffold(
